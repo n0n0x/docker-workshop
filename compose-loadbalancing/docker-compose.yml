@@ -1,0 +1,11 @@
+webapp:
+  build: .
+  ports:
+   - "8080"
+  links:
+   - redis
+  environment:
+   - VIRTUAL_HOST=docker-test.streemalabs.com
+
+redis:
+  image: redis
