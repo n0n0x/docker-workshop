@@ -1,0 +1,15 @@
+devredis:
+  image: redis
+
+devapp:
+  extends:
+    file: common.yml
+    service: advanced_compose
+  volumes:
+   - ./app:/app
+  ports:
+   - "4003:5000"
+  environment:
+   - PRODUCTION=False
+  links:
+   - devredis:redis

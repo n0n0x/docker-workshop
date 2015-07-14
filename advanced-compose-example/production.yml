@@ -1,0 +1,15 @@
+redis:
+  image: redis
+  volumes:
+   - /tmp/redis/data:/data
+
+app:
+  extends:
+    file: common.yml
+    service: advanced_compose
+  ports:
+   - "4002:5000"
+  environment:
+   - PRODUCTION=True
+  links:
+   - redis
