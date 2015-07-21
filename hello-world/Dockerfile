@@ -1,3 +1,3 @@
 FROM nginx
 
-ADD site /usr/local/nginx/html
+ADD site /usr/share/nginx/html
